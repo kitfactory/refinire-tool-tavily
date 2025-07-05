@@ -8,7 +8,8 @@ from .tools import (
     refinire_web_search, 
     refinire_web_search_context, 
     refinire_web_search_news, 
-    refinire_web_search_research
+    refinire_web_search_research,
+    refinire_web_search_programming_api
 )
 
 __version__ = "0.1.1"
@@ -17,5 +18,6 @@ __all__ = [
     "TavilyService", "search_web", "get_search_context",
     "ConfigManager", "setup_env", "check_config",
     "refinire_web_search", "refinire_web_search_context", 
-    "refinire_web_search_news", "refinire_web_search_research"
+    "refinire_web_search_news", "refinire_web_search_research",
+    "refinire_web_search_programming_api"
 ]

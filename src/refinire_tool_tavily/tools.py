@@ -155,23 +155,81 @@ def refinire_web_search_research(
         "nature.com", "science.org", "researchgate.net", "semanticscholar.org",
         "pubmed.ncbi.nlm.nih.gov", "doi.org",
         
-        # Technical Documentation
+        # Technical Documentation & API References
         "docs.python.org", "github.com", "stackoverflow.com", "developer.mozilla.org",
         "docs.microsoft.com", "cloud.google.com", "aws.amazon.com",
         
-        # US Tech Sites
-        "techcrunch.com", "venturebeat.com", "arstechnica.com", "wired.com",
-        "mit.edu", "stanford.edu", "berkeley.edu", "medium.com",
-        
-        # Japanese Tech Sites
-        "qiita.com", "zenn.dev", "speakerdeck.com", "slideshare.net",
-        "ipsj.or.jp", "jst.go.jp", "riken.jp", "nii.ac.jp"
     ]
     
     return search_web(
         query=f"{query} research paper academic",
         max_results=max_results,
         include_domains=research_domains,
+        include_answer=True,
+        include_raw_content=True
+    )
+
+
+@tool(
+    name="web_search_programming_api",
+    description="Search for programming documentation, API references, and developer resources"
+)
+def refinire_web_search_programming_api(
+    query: str,
+    max_results: int = 5
+) -> dict:
+    """Search for programming documentation, API references, and developer resources.
+    
+    This tool searches for programming content, API documentation, and developer resources
+    by focusing on programming sites, API documentation platforms, and development communities.
+    
+    Args:
+        query: Programming or API search query
+        max_results: Maximum number of results (default: 5)
+    
+    Returns:
+        Dictionary containing programming and API-focused search results.
+        
+    Example:
+        api_results = web_search_programming_api("REST API authentication methods")
+        doc_results = web_search_programming_api("Python requests library documentation")
+    """
+    # Focus on programming and API documentation domains
+    programming_api_domains = [
+        # API Documentation & Tools
+        "postman.com", "swagger.io", "openapi.org", "restfulapi.net",
+        "apidog.com", "insomnia.rest", "rapidapi.com", "apidocs.io",
+        
+        # Major Platform APIs
+        "developers.google.com", "developer.apple.com", "developer.twitter.com",
+        "docs.github.com", "developer.spotify.com", "developers.facebook.com",
+        "developer.mozilla.org", "docs.microsoft.com", "cloud.google.com", "aws.amazon.com",
+        
+        # Technical Documentation
+        "docs.python.org", "nodejs.org", "reactjs.org", "vuejs.org", "angular.io",
+        "django-rest-framework.org", "flask.palletsprojects.com", "fastapi.tiangolo.com",
+        "kubernetes.io", "docker.com", "redis.io", "mongodb.com", "postgresql.org",
+        
+        # Development Communities & Resources
+        "github.com", "stackoverflow.com", "dev.to", "hashnode.com",
+        "freecodecamp.org", "codecademy.com", "tutorialspoint.com", "w3schools.com",
+        
+        # US Tech Sites & Blogs
+        "techcrunch.com", "venturebeat.com", "arstechnica.com", "wired.com",
+        "medium.com", "hackernoon.com", "smashingmagazine.com", "css-tricks.com",
+        
+        # Japanese Tech Sites
+        "qiita.com", "zenn.dev", "speakerdeck.com", "slideshare.net",
+        "tech.recruit-mp.co.jp", "engineering.mercari.com", "techblog.yahoo.co.jp",
+        
+        # Open Source & Package Repositories
+        "pypi.org", "npmjs.com", "packagist.org", "rubygems.org", "crates.io"
+    ]
+    
+    return search_web(
+        query=f"{query} documentation API guide tutorial",
+        max_results=max_results,
+        include_domains=programming_api_domains,
         include_answer=True,
         include_raw_content=True
     )
