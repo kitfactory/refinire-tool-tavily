@@ -9,7 +9,7 @@ from .tools import (
     refinire_web_search_context, 
     refinire_web_search_news, 
     refinire_web_search_research,
-    refinire_web_search_programming_api
+    refinire_web_search_programming
 )
 
 __version__ = "0.1.1"
@@ -19,5 +19,5 @@ __all__ = [
     "ConfigManager", "setup_env", "check_config",
     "refinire_web_search", "refinire_web_search_context", 
     "refinire_web_search_news", "refinire_web_search_research",
-    "refinire_web_search_programming_api"
+    "refinire_web_search_programming"
 ]

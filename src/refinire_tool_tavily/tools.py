@@ -171,10 +171,10 @@ def refinire_web_search_research(
 
 
 @tool(
-    name="web_search_programming_api",
+    name="web_search_programming",
     description="Search for programming documentation, API references, and developer resources"
 )
-def refinire_web_search_programming_api(
+def refinire_web_search_programming(
     query: str,
     max_results: int = 5
 ) -> dict:
@@ -191,8 +191,8 @@ def refinire_web_search_programming_api(
         Dictionary containing programming and API-focused search results.
         
     Example:
-        api_results = web_search_programming_api("REST API authentication methods")
-        doc_results = web_search_programming_api("Python requests library documentation")
+        api_results = web_search_programming("REST API authentication methods")
+        doc_results = web_search_programming("Python requests library documentation")
     """
     # Focus on programming and API documentation domains
     programming_api_domains = [
