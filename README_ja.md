@@ -118,10 +118,9 @@ research = refinire_web_search_research("ニューラルネットワーク", max
 | 変数 | 説明 | 必須 | デフォルト |
 |------|------|------|------------|
 | `TAVILY_API_KEY` | Tavily APIキー | はい | - |
-| `LOG_LEVEL` | ログレベル | いいえ | INFO |
-| `DEFAULT_MAX_RESULTS` | デフォルト最大結果数 | いいえ | 5 |
-| `DEFAULT_INCLUDE_ANSWER` | AI回答を含める | いいえ | false |
-| `DEFAULT_INCLUDE_RAW_CONTENT` | 生コンテンツを含める | いいえ | false |
+| `REFINIRE_TOOL_TAVILY_MAX_RESULTS` | デフォルト最大結果数 | いいえ | 5 |
+| `REFINIRE_TOOL_TAVILY_INCLUDE_ANSWER` | AI回答を含める | いいえ | false |
+| `REFINIRE_TOOL_TAVILY_INCLUDE_RAW_CONTENT` | 生コンテンツを含める | いいえ | false |
 
 ### 高度な設定
 

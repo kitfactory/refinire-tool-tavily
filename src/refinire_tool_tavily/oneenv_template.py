@@ -17,28 +17,20 @@ def tavily_template():
                     "importance": "critical"
                 }
             },
-            "Application Settings": {
-                "LOG_LEVEL": {
-                    "description": "Logging level for the application",
-                    "default": "INFO",
-                    "required": False,
-                    "importance": "optional"
-                }
-            },
             "Search Defaults": {
-                "DEFAULT_MAX_RESULTS": {
+                "REFINIRE_TOOL_TAVILY_MAX_RESULTS": {
                     "description": "Default maximum number of search results to return",
                     "default": "5",
                     "required": False,
                     "importance": "optional"
                 },
-                "DEFAULT_INCLUDE_ANSWER": {
+                "REFINIRE_TOOL_TAVILY_INCLUDE_ANSWER": {
                     "description": "Include AI-generated answer by default",
                     "default": "false",
                     "required": False,
                     "importance": "optional"
                 },
-                "DEFAULT_INCLUDE_RAW_CONTENT": {
+                "REFINIRE_TOOL_TAVILY_INCLUDE_RAW_CONTENT": {
                     "description": "Include raw content of web pages by default",
                     "default": "false",
                     "required": False,

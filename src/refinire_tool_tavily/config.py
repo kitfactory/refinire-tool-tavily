@@ -68,13 +68,10 @@ class ConfigManager:
 # Get your API key from: https://tavily.com/
 TAVILY_API_KEY=your_tavily_api_key_here
 
-# Optional: Logging Level (DEBUG, INFO, WARNING, ERROR)
-LOG_LEVEL=INFO
-
 # Optional: Default search parameters
-DEFAULT_MAX_RESULTS=5
-DEFAULT_INCLUDE_ANSWER=false
-DEFAULT_INCLUDE_RAW_CONTENT=false
+REFINIRE_TOOL_TAVILY_MAX_RESULTS=5
+REFINIRE_TOOL_TAVILY_INCLUDE_ANSWER=false
+REFINIRE_TOOL_TAVILY_INCLUDE_RAW_CONTENT=false
 """
                 with open(self.env_file, 'w') as f:
                     f.write(manual_template)
@@ -114,17 +111,16 @@ DEFAULT_INCLUDE_RAW_CONTENT=false
         return results
     
     def get_config(self) -> Dict[str, Any]:
-        """Get current configuration values using oneenv.
+        """Get current configuration values.
         
         Returns:
             Dictionary with configuration values
         """
         return {
             "tavily_api_key": os.getenv("TAVILY_API_KEY"),
-            "log_level": os.getenv("LOG_LEVEL", "INFO"),
-            "default_max_results": int(os.getenv("DEFAULT_MAX_RESULTS", "5")),
-            "default_include_answer": os.getenv("DEFAULT_INCLUDE_ANSWER", "false").lower() == "true",
-            "default_include_raw_content": os.getenv("DEFAULT_INCLUDE_RAW_CONTENT", "false").lower() == "true"
+            "default_max_results": int(os.getenv("REFINIRE_TOOL_TAVILY_MAX_RESULTS", "5")),
+            "default_include_answer": os.getenv("REFINIRE_TOOL_TAVILY_INCLUDE_ANSWER", "false").lower() == "true",
+            "default_include_raw_content": os.getenv("REFINIRE_TOOL_TAVILY_INCLUDE_RAW_CONTENT", "false").lower() == "true"
         }
     
     def print_config_status(self) -> None:
@@ -170,14 +166,10 @@ DEFAULT_INCLUDE_RAW_CONTENT=false
         print("  TAVILY_API_KEY: Tavily API key for web search (REQUIRED)")
         print("                  Get your API key from: https://tavily.com/")
         print()
-        print("⚙️  Application Settings:")
-        print("  LOG_LEVEL: Logging level (default: INFO)")
-        print("            Options: DEBUG, INFO, WARNING, ERROR")
-        print()
         print("🔍 Search Defaults:")
-        print("  DEFAULT_MAX_RESULTS: Default maximum search results (default: 5)")
-        print("  DEFAULT_INCLUDE_ANSWER: Include AI answer by default (default: false)")
-        print("  DEFAULT_INCLUDE_RAW_CONTENT: Include raw content by default (default: false)")
+        print("  REFINIRE_TOOL_TAVILY_MAX_RESULTS: Default maximum search results (default: 5)")
+        print("  REFINIRE_TOOL_TAVILY_INCLUDE_ANSWER: Include AI answer by default (default: false)")
+        print("  REFINIRE_TOOL_TAVILY_INCLUDE_RAW_CONTENT: Include raw content by default (default: false)")
         print()
         print("💡 To generate a complete template:")
         print("   oneenv template")
