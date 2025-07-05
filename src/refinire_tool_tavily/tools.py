@@ -150,9 +150,22 @@ def refinire_web_search_research(
     """
     # Focus on academic and technical domains
     research_domains = [
-        "arxiv.org", "scholar.google.com", "ieee.org", "acm.org",
+        # Academic & Research
+        "arxiv.org", "ar5iv.labs.arxiv.org", "scholar.google.com", "ieee.org", "acm.org",
         "nature.com", "science.org", "researchgate.net", "semanticscholar.org",
-        "docs.python.org", "github.com", "stackoverflow.com"
+        "pubmed.ncbi.nlm.nih.gov", "doi.org",
+        
+        # Technical Documentation
+        "docs.python.org", "github.com", "stackoverflow.com", "developer.mozilla.org",
+        "docs.microsoft.com", "cloud.google.com", "aws.amazon.com",
+        
+        # US Tech Sites
+        "techcrunch.com", "venturebeat.com", "arstechnica.com", "wired.com",
+        "mit.edu", "stanford.edu", "berkeley.edu", "medium.com",
+        
+        # Japanese Tech Sites
+        "qiita.com", "zenn.dev", "speakerdeck.com", "slideshare.net",
+        "ipsj.or.jp", "jst.go.jp", "riken.jp", "nii.ac.jp"
     ]
     
     return search_web(

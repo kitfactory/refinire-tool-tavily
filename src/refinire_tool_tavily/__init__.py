@@ -11,7 +11,7 @@ from .tools import (
     refinire_web_search_research
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = [
     "SearchRequest", "SearchResponse", "SearchResult", 
     "TavilyService", "search_web", "get_search_context",
